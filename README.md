@@ -62,7 +62,7 @@ cd ./connectathon/marbles
   docker-compose-no-cdb.yml       mycreds.json
   marbles.sh                      peer.yml
   ```
-  Now, execute the `marbles.sh` shell script. This script will pull
+  Now, execute the `marbles.sh` shell script as demonstrated in the code block below. This script will pull
   the dependent fabric images from [Docker Hub](https://hub.docker.com/u/connectathon/)
   and spin up two containers - one for your endorsing peer, and one for the
   marbles Node.js application.  This process takes a few minutes, during which you will see the various
