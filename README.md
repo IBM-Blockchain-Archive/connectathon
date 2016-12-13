@@ -31,7 +31,7 @@ lastupdated: "2016-12-12"
 - It will ask you for an `enrollID` and your `email`.
 - Please enter a unique `enrollID`.
 - The credentials, which are comprised of your `enrollID` and an auto-generated
-`enrollSecret` will be sent to you via your provided `email`.  The sender of this
+`enrollSecret`, will be sent to you via your provided `email`.  The sender of this
 email will be __IBM Blockchain__.  Save these
 credentials; you will need the `enrollID` and `enrollSecret` to properly
 authenticate your marbles application onto the network.  
