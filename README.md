@@ -3,7 +3,7 @@
 ## Follow these steps and quickly join a Marbles Trading Network
 
 ### Prerequisites
-- <a href="https://git-scm.com/downloads" target="_blank">Git client</a> 
+- <p><a href="https://git-scm.com/downloads" target="_blank">Git client</a></p>
 - [Docker v1.12 or higher](https://www.docker.com/products/overview)
 - [Docker-Compose v1.8 or higher](https://docs.docker.com/compose/overview/)
 
