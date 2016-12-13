@@ -38,7 +38,7 @@ and `enrollSecret` to properly authenticate your marbles application onto the ne
 
 #### What occurred during registration?
   
-Behind the scenes a REST call was issued to the publicly-hosted COP server to register a user with the unique `enrollID` you have provided.  This user represents the admin for your organization, and will be used by the
+Behind the scenes a REST call was issued to the publicly-hosted COP server to register a user with the unique `enrollID` you provided.  This user represents the admin for your organization, and will be used by the
 application to authenticate to the chain.
 
 
