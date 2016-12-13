@@ -23,18 +23,18 @@ lastupdated: "2016-12-13"
 - <a href="https://git-scm.com/downloads" target="_blank">Git client</a>
 - <a href="https://www.docker.com/products/overview" target="_blank">Docker v1.12 or higher</a>
 [Docker v1.12 or higher]()
-- [Docker-Compose v1.8 or higher](https://docs.docker.com/compose/overview/){: #new_window}
+- [Docker-Compose v1.8 or higher](https://docs.docker.com/compose/overview/)
 
 ### Register a user
 
 - Go to [User Registration Website](http://connectathon-cop.blockchain.ibm.com)
-- It will ask you for an `enrollID` and your `email`.
+- To circumvent the firewall, use the credentials that you received from __IBM Blockchain__.
+- Next, you will be prompted for an `enrollID` and your `email`.
 - Please enter a unique `enrollID`.
 - The credentials, which are comprised of your `enrollID` and an auto-generated
 `enrollSecret`, will be sent to you via your provided `email`.  The sender of this
-email will be __IBM Blockchain__.  Save these
-credentials; you will need the `enrollID` and `enrollSecret` to properly
-authenticate your marbles application onto the network.  
+email will be __IBM Blockchain__.  Save these credentials; you will need the `enrollID` 
+and `enrollSecret` to properly authenticate your marbles application onto the network.  
 
 #### What will this step do?
   ```
@@ -70,11 +70,12 @@ cd ./connectathon/marbles
   which you received in your email upon registration will be used as input
   parameters in the script below:
   ```bash
-  ./marbles.sh up <enrollID> <enrollSecret> <company> <user1> <user2> <user3>
-  #enrollId is what you used alongside your email when you requested an enrollSecret
-  #enrollSecret is what was returned to you via email
+  #enrollId is what you used alongside your email when you registered with the COP Server
+  #enrollSecret is what was returned to you via email. It is a 12 digit alphanumeric string
   #company is the name of your organization, and is how you will be represented on the chain
   #user1, user2, and user3 are the users registered under your organization
+  
+  ./marbles.sh up <enrollID> <enrollSecret> <company> <user1> <user2> <user3>
   ```
   Ensure that you populate all of the required fields.  Recall that this demo is
   simulating an organizational admin who authenticates to a blockchain network,
@@ -84,6 +85,13 @@ cd ./connectathon/marbles
   ```
   ./marbles.sh up Admin1 xYzAAbbc1234 JPM eric kenny stan
   ```
+  If your command fails to run, then you need to turn the marbles shell script into an
+  executable.  From the `./connectathon/marbles` directory:
+  ```bash
+  chmod a+x marbles.sh 
+  ```
+  Now re-run the marbles shell script with the same inputs as before.
+
 ### View the Marbles UI
   By executing the shell script you have kicked off the marbles application.  It
   is running as a container on your local machine.  To see your currently-running
@@ -116,14 +124,17 @@ cd ./connectathon/marbles
   marbles trading market.  Organizations and users represented within those
   organizations will appear on the screen.  You will also notice that you have
   the ability to transfer assets (marbles) for your registered users, but
-  cannot distribute another organization's assets.  Happy trading.
+  cannot distribute another organization's assets.  __Happy trading!__
 
   To see the logs and peer processes for your endorsing peer:
   ```
+  # This will allow you to see real-time invocations and block commits happening on your network's chain
   docker logs peer
   ```
-  This will allow you to see real-time invocations and block commits happening
-  on your network's chain.  
+  To see the logs for your marbles application:
+  ```
+  docker logs mtc-01
+  ``` 
 
 ### Troubleshooting
   If you see an error similar to:
@@ -133,7 +144,19 @@ cd ./connectathon/marbles
   map to a dictionary of configuration options.
   ```
   You will need to upgrade your Docker-Compose version in order to achieve
-  compatibility with the docker-compose.yaml scripts.  
+  compatibility with the docker-compose.yaml scripts. Upgrade your Docker-Compose version
+  in one of the following ways:
+  ```bash
+  apt install docker.io
+  ```
+  OR
+  ```bash
+  sudo -i
+  curl -L "https://github.com/docker/compose/releases/download/1.9.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  chmod +x /usr/local/bin/docker-compose
+  docker-compose --version
+  exit
+  ```
 
 ### Helpful Docker Commands
 
