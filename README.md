@@ -3,6 +3,7 @@
 ## Follow these steps and quickly join a Marbles Trading Network
 
 ### Prerequisites
+- <a href="https://git-scm.com/downloads" target="_blank">Git client</a> 
 - [Docker v1.12 or higher](https://www.docker.com/products/overview)
 - [Docker-Compose v1.8 or higher](https://docs.docker.com/compose/overview/)
 
@@ -11,45 +12,45 @@
 - Go to [User Registration Website](http://connectathon-cop.blockchain.ibm.com)
 - It will ask you for an `enrollID` and your `email`.
 - Please enter a unique `enrollID`.
-- The credentials will sent to you via your provided `email`.  Save these credentials; you
-will need the `enrollID` and `enrollSecret` to properly authenticate your marbles
-application onto the network.  
+- The credentials, which are comprised of your `enrollID` and an auto-generated
+`enrollSecret` will be sent to you via your provided `email`.  The sender of this
+email will be __IBM Blockchain__.  Save these
+credentials; you will need the `enrollID` and `enrollSecret` to properly
+authenticate your marbles application onto the network.  
 
 #### What will this step do?
   ```
-  Behind the scenes this will make a REST call to the fabric-COP and  
-  register a user with the unique `enrollID` you have provided.
+  Behind the scenes this will make a REST call to the publicly-hosted COP server
+  and register a user with the unique `enrollID` you have provided.
   This user represents the admin for your organization, and will be used by the
-  app to authenticate to the chain.
+  application to authenticate to the chain.
   ```
 
 ### Clone the repo
 ```bash
-git clone https://github.ibm.com/IBM-Blockchain/connectathon.git
-cd connectathon
-cd marbles
-git checkout public
+git clone https://github.com/IBM-Blockchain/connectathon.git
+cd ./connectathon/marbles
 ```
 
 ### Use the credentials to join the chain
 
-- Ensure that you are in the correct working directory:
+- First ensure that you are in the correct working directory:
   ```
-  /connectathon/marbles
+  ls
   ```
-  and that you are on the public branch.  You can confirm this by typing:
+  This should display the marbles directory:
+  ```bash
+  README.md                       marbles.yml
+  docker-compose-no-cdb.yml       mycreds.json
+  marbles.sh                      peer.yml
   ```
-  git branch
-  ```
-  you should see
-  ```
-  master
-  * public
-  ```
-  Now execute the shell script. This script will pull the dependent Fabric
-  images, and spin up two containers - one for your endorsing peer and
-  one for the marbles node.js application.  The `enrollID` and `enrollSecret`
-  which you received in your email upon registration will be used at this point:
+  Now, execute the `marbles.sh` shell script. This script will pull
+  the dependent Fabric images from [Docker Hub](https://hub.docker.com/u/connectathon/)
+  and spin up two containers - one for your endorsing peer, and one for the
+  marbles node.js application.  This process takes a few minutes, during which you will see the various
+  images being downloaded and extracted onto your local machine.  The `enrollID` and `enrollSecret`
+  which you received in your email upon registration will be used as an input
+  parameter in the script below:
   ```bash
   ./marbles.sh up <enrollID> <enrollSecret> <company> <user1> <user2> <user3>
   #enrollId is what you used alongside your email when you requested an enrollSecret
@@ -67,8 +68,8 @@ git checkout public
   ```
 ### View the Marbles UI
   By executing the shell script you have kicked off the marbles application.  It
-  is running as a container on your local machine.  To see your currently
-  running containers:
+  is running as a container on your local machine.  To see your currently-running
+  containers:
   ```
   docker ps
   ```
@@ -81,7 +82,9 @@ git checkout public
   page, after which three processes will take place.  
 
   * You will be logged in as the admin.
-  * The application will find the chaincode and the current state of the ledger.
+  * Your endorsing peer obtains the current state of the ledger from the
+  publicly-hosted Ordering Service.  The ledger already contains the chaincode
+  used by the marbles application.
   * Your users will be registered and allocated their marbles.
 
   Upon success of these three processes, you will be able to view the entire
@@ -94,7 +97,7 @@ git checkout public
   ```
   docker logs peer
   ```
-  This will allow you to see realtime invocations and block commits happening
+  This will allow you to see real-time invocations and block commits happening
   on your network's chain.  
 
 ### Troubleshooting
@@ -106,8 +109,8 @@ git checkout public
   ```
   You will need to upgrade your Docker-Compose version in order to achieve
   compatibility with the docker-compose.yaml scripts.  
-  
-### Helpful Docker Commands 
+
+### Helpful Docker Commands
 
 1. View running containers:
 
