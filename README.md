@@ -24,6 +24,14 @@ lastupdated: "2016-12-13"
 - <a href="https://www.docker.com/products/overview" target="_blank">Docker v1.12 or higher</a>
 - [Docker-Compose v1.8 or higher](https://docs.docker.com/compose/overview/)
 
+Check your Docker and Docker-Compose versions with the following commands:
+```bash
+docker version
+```
+```bash
+docker-compose version
+```
+
 ### Register a user
 
 - Go to [User Registration Website](http://connectathon-cop.blockchain.ibm.com)
@@ -36,9 +44,9 @@ are solely for accessing the Registration Website. Do not reuse them in the next
 email will be __IBM Blockchain__.  Save these credentials; you will need the `enrollID` 
 and `enrollSecret` to properly authenticate your marbles application onto the network.  
 
-#### What will this step do?
+#### What occurred during registration?
   
-Behind the scenes this will make a REST call to the publicly-hosted COP server and register a user with the unique   `enrollID` you have provided.  This user represents the admin for your organization, and will be used by the
+Behind the scenes a REST call was issued to the publicly-hosted COP server to register a user with the unique `enrollID` you provided.  This user represents the admin for your organization, and will be used by the
 application to authenticate to the chain.
 
 
