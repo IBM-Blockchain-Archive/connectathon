@@ -25,10 +25,8 @@ application onto the network.
 
 ### Clone the repo
 ```bash
-git clone https://github.ibm.com/IBM-Blockchain/connectathon.git
-cd connectathon
-cd marbles
-git checkout public
+git clone https://github.com/IBM-Blockchain/connectathon.git
+cd connectathon/marbles
 ```
 
 ### Use the credentials to join the chain
