@@ -1,20 +1,3 @@
----
-
-
-
-copyright:
-
-  years: 2015, 2016
-lastupdated: "2016-12-13"
-
-
----
-
-{:shortdesc: .shortdesc}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:new_window: target="_blank"}
-
 # Connect-A-Thon
 
 ## Follow these steps and quickly join a Marbles Trading Network
@@ -92,6 +75,8 @@ cd ./connectathon/marbles
   ```
   ./marbles.sh up Admin1 xYzAAbbc1234 JPM eric kenny stan
   ```
+  If the command executed successfully, skip to the next section.
+  
   If your command fails to run, then you need to turn the marbles shell script into an
   executable.  From the `./connectathon/marbles` directory:
   ```bash
@@ -107,18 +92,16 @@ cd ./connectathon/marbles
   docker ps
   ```
   Assuming you have no other processes running, you should see two distinct
-  containers.  One for your peer and one for the marbles application.
+  containers - one for your peer and one for the marbles application.
 
   Open up a browser and visit `localhost:3000`.  This will take you to an
   initial administrative screen.  Login as the `admin` at the bottom of the
   page, after which three processes will take place.  
 
   * You will be logged in as the admin.
-  * Your endorsing peer obtains the current state of the ledger from the
-  publicly-hosted Ordering Service.  The ledger already contains the chaincode
-  used by the marbles application.  At this point your machine will spin up a new
+  * Your endorsing peer obtains the current state of the ledger from the publicly-hosted Ordering Service.  The ledger already contains the chaincode used by the marbles application.  At this point your machine will spin up a new
   container for the marbles chaincode.
-  * Your users will be registered and allocated their marbles.
+  * Your users will be registered and authenticated to the chain.
   
   You should now have three distinct containers.  One for your peer, one for the Marbles
   application, and one for the marbles chaincode.  View your containers with a `docker ps` command.
