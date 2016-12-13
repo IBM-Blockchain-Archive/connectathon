@@ -9,7 +9,7 @@ USER2=$6
 USER3=$7
 
 function printHelp {
-	echo "Usage: ./marbles.sh <up/down> <enrollId> <enrollSecret> <company> <user1> <user2> <user3>"
+	echo "Usage: ./marbles.sh <up|down> <enrollId> <enrollSecret> <company> <user1> <user2> <user3>"
 }
 
 function validateInput {
