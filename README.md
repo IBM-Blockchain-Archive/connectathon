@@ -28,7 +28,7 @@ lastupdated: "2016-12-13"
 
 - Go to [User Registration Website](http://connectathon-cop.blockchain.ibm.com)
 - To circumvent the firewall, use the credentials that you received from __IBM Blockchain__.  _Note: These credentials
-are solely for accessing the Registration Website. Do not reuse them in the next step.
+are solely for accessing the Registration Website. Do not reuse them in the next step._
 - Next, you will be prompted for an `enrollID` and your `email`.
 - Please enter a unique `enrollID`.
 - The credentials, which are comprised of your `enrollID` and an auto-generated
