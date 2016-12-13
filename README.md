@@ -114,11 +114,9 @@ cd ./connectathon/marbles
   page, after which three processes will take place.  
 
   * You will be logged in as the admin.
-  * Your endorsing peer obtains the current state of the ledger from the
-  publicly-hosted Ordering Service.  The ledger already contains the chaincode
-  used by the marbles application.  At this point your machine will spin up a new
+  * Your endorsing peer obtains the current state of the ledger from the publicly-hosted Ordering Service.  The ledger already contains the chaincode used by the marbles application.  At this point your machine will spin up a new
   container for the marbles chaincode.
-  * Your users will be registered and allocated their marbles.
+  * Your users will be registered and authenticated to the chain.
   
   You should now have three distinct containers.  One for your peer, one for the Marbles
   application, and one for the marbles chaincode.  View your containers with a `docker ps` command.
