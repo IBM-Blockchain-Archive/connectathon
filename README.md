@@ -64,7 +64,8 @@ cd ./connectathon/marbles
   the dependent fabric images from [Docker Hub](https://hub.docker.com/u/connectathon/)
   and spin up two containers - one for your endorsing peer, and one for the
   marbles Node.js application.  This process takes a few minutes, during which you will see the various
-  images being downloaded and extracted onto your local machine.  The `enrollID` and `enrollSecret`
+  images being downloaded and extracted onto your local machine.  Depending on the
+  configuration of your machine, you may be prompted several times for your root password. The `enrollID` and `enrollSecret`
   which you received in your email upon registration will be used as input
   parameters in the script below:
   ```bash
@@ -111,13 +112,9 @@ cd ./connectathon/marbles
   container for the marbles chaincode.
   * Your users will be registered and allocated their marbles.
   
-  To see your currently-running containers:
-  ```
-  docker ps
-  ```
-  You should now see three distinct containers.  One for your peer, one for the Marbles
-  application, and one for the marbles chaincode.
-
+  You should now have three distinct containers.  One for your peer, one for the Marbles
+  application, and one for the marbles chaincode.  View your containers with a `docker ps` command.
+  
   Upon success of these three processes, you will be able to view the entire
   marbles trading market.  Organizations and users represented within those
   organizations will appear on the screen.  You will also notice that you have
