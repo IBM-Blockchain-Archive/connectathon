@@ -1,10 +1,13 @@
+{:new_window: target="_blank"}
+
 # Connect-A-Thon
 
 ## Follow these steps and quickly join a Marbles Trading Network
 
 ### Prerequisites
-- <a href="https://git-scm.com/downloads" target="blank">Git client</a>
-- [Docker v1.12 or higher](https://www.docker.com/products/overview)
+- <a href="https://git-scm.com/downloads" target="_blank">Git client</a>
+- <a href="https://www.docker.com/products/overview" target="_blank">Docker v1.12 or higher</a>
+[Docker v1.12 or higher]()
 - [Docker-Compose v1.8 or higher](https://docs.docker.com/compose/overview/)
 
 ### Register a user
