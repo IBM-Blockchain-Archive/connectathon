@@ -1,0 +1,19 @@
+version: '2'
+
+networks:
+  net:
+
+
+services:
+  peer:
+    extends:
+      file: peer.yml
+      service: peer-base
+    environment: 
+      - CORE_PEER_ID=${HOSTNAME}
+      - CORE_PEER_COMMITTER_LEDGER_ORDERER=connectathon-orderer.blockchain.ibm.com:30303
+    ports: 
+      - 7051:7051
+    container_name: peer
+    networks:
+    - net

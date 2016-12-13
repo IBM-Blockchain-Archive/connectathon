@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  mtc-01:
+    image: connectathon/marbles
+    links:
+      - peer
+    ports:
+      - 3000:3000
+    volumes:
+      - ${CREDS_LOCATION}/marbles.json:/app/config/mycreds.json
+    container_name: mtc-01
+    entrypoint: gulp marbles
+    networks:
+      - net
