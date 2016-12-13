@@ -22,13 +22,13 @@ lastupdated: "2016-12-13"
 ### Prerequisites
 - <a href="https://git-scm.com/downloads" target="_blank">Git client</a>
 - <a href="https://www.docker.com/products/overview" target="_blank">Docker v1.12 or higher</a>
-[Docker v1.12 or higher]()
 - [Docker-Compose v1.8 or higher](https://docs.docker.com/compose/overview/)
 
 ### Register a user
 
 - Go to [User Registration Website](http://connectathon-cop.blockchain.ibm.com)
-- To circumvent the firewall, use the credentials that you received from __IBM Blockchain__.
+- To circumvent the firewall, use the credentials that you received from __IBM Blockchain__.  _Note: These credentials
+are solely for accessing the Registration Website. Do not reuse them in the next step.
 - Next, you will be prompted for an `enrollID` and your `email`.
 - Please enter a unique `enrollID`.
 - The credentials, which are comprised of your `enrollID` and an auto-generated
@@ -56,14 +56,14 @@ cd ./connectathon/marbles
   ```
   ls
   ```
-  This should display the marbles directory:
+  This should display the `marbles` directory:
   ```bash
   README.md                       marbles.yml
   docker-compose-no-cdb.yml       mycreds.json
   marbles.sh                      peer.yml
   ```
   Now, execute the `marbles.sh` shell script. This script will pull
-  the dependent Fabric images from [Docker Hub](https://hub.docker.com/u/connectathon/)
+  the dependent fabric images from [Docker Hub](https://hub.docker.com/u/connectathon/)
   and spin up two containers - one for your endorsing peer, and one for the
   marbles Node.js application.  This process takes a few minutes, during which you will see the various
   images being downloaded and extracted onto your local machine.  The `enrollID` and `enrollSecret`
@@ -93,7 +93,7 @@ cd ./connectathon/marbles
   Now re-run the marbles shell script with the same inputs as before.
 
 ### View the Marbles UI
-  By executing the shell script you have kicked off the marbles application.  It
+  By executing the shell script you have kicked off the Marbles application.  It
   is running as a container on your local machine.  To see your currently-running
   containers:
   ```
