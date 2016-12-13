@@ -24,7 +24,6 @@
 ```bash
 git clone https://github.ibm.com/IBM-Blockchain/connectathon.git
 cd marbles
-git checkout public
 ```
 
 ### Use the credentials to join the chain
