@@ -52,7 +52,7 @@ cd ./connectathon/marbles
 
 ### Use the credentials to join the chain
 
-- First ensure that you are in the correct working directory:
+- First, ensure that you are in the correct working directory:
   ```
   ls
   ```
@@ -65,10 +65,10 @@ cd ./connectathon/marbles
   Now, execute the `marbles.sh` shell script. This script will pull
   the dependent Fabric images from [Docker Hub](https://hub.docker.com/u/connectathon/)
   and spin up two containers - one for your endorsing peer, and one for the
-  marbles node.js application.  This process takes a few minutes, during which you will see the various
+  marbles Node.js application.  This process takes a few minutes, during which you will see the various
   images being downloaded and extracted onto your local machine.  The `enrollID` and `enrollSecret`
-  which you received in your email upon registration will be used as an input
-  parameter in the script below:
+  which you received in your email upon registration will be used as input
+  parameters in the script below:
   ```bash
   ./marbles.sh up <enrollID> <enrollSecret> <company> <user1> <user2> <user3>
   #enrollId is what you used alongside your email when you requested an enrollSecret
@@ -91,9 +91,8 @@ cd ./connectathon/marbles
   ```
   docker ps
   ```
-  Assuming you have no other processes running, you should see three distinct
-  containers.  One for your peer, one for the marbles app, and one for the
-  marbles chaincode running on your peer.
+  Assuming you have no other processes running, you should see two distinct
+  containers.  One for your peer and one for the marbles application.
 
   Open up a browser and visit `localhost:3000`.  This will take you to an
   initial administrative screen.  Login as the `admin` at the bottom of the
@@ -102,8 +101,16 @@ cd ./connectathon/marbles
   * You will be logged in as the admin.
   * Your endorsing peer obtains the current state of the ledger from the
   publicly-hosted Ordering Service.  The ledger already contains the chaincode
-  used by the marbles application.
+  used by the marbles application.  At this point your machine will spin up a new
+  container for the marbles chaincode.
   * Your users will be registered and allocated their marbles.
+  
+  To see your currently-running containers:
+  ```
+  docker ps
+  ```
+  You should now see three distinct containers.  One for your peer, one for the Marbles
+  application, and one for the marbles chaincode.
 
   Upon success of these three processes, you will be able to view the entire
   marbles trading market.  Organizations and users represented within those
