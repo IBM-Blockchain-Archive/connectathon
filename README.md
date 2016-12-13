@@ -37,12 +37,10 @@ email will be __IBM Blockchain__.  Save these credentials; you will need the `en
 and `enrollSecret` to properly authenticate your marbles application onto the network.  
 
 #### What will this step do?
-  ```
-  Behind the scenes this will make a REST call to the publicly-hosted COP server
-  and register a user with the unique `enrollID` you have provided.
-  This user represents the admin for your organization, and will be used by the
-  application to authenticate to the chain.
-  ```
+  
+Behind the scenes this will make a REST call to the publicly-hosted COP server and register a user with the unique   `enrollID` you have provided.  This user represents the admin for your organization, and will be used by the
+application to authenticate to the chain.
+
 
 ### Clone the repo
 ```bash
