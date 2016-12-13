@@ -75,6 +75,8 @@ cd ./connectathon/marbles
   ```
   ./marbles.sh up Admin1 xYzAAbbc1234 JPM eric kenny stan
   ```
+  If the command executed successfully, skip to the next section.
+  
   If your command fails to run, then you need to turn the marbles shell script into an
   executable.  From the `./connectathon/marbles` directory:
   ```bash
@@ -90,7 +92,7 @@ cd ./connectathon/marbles
   docker ps
   ```
   Assuming you have no other processes running, you should see two distinct
-  containers.  One for your peer and one for the marbles application.
+  containers - one for your peer and one for the marbles application.
 
   Open up a browser and visit `localhost:3000`.  This will take you to an
   initial administrative screen.  Login as the `admin` at the bottom of the
