@@ -1,3 +1,18 @@
+---
+
+
+
+copyright:
+
+  years: 2015, 2016
+lastupdated: "2016-12-12"
+
+
+---
+
+{:shortdesc: .shortdesc}
+{:codeblock: .codeblock}
+{:screen: .screen}
 {:new_window: target="_blank"}
 
 # Connect-A-Thon
@@ -8,7 +23,7 @@
 - <a href="https://git-scm.com/downloads" target="_blank">Git client</a>
 - <a href="https://www.docker.com/products/overview" target="_blank">Docker v1.12 or higher</a>
 [Docker v1.12 or higher]()
-- [Docker-Compose v1.8 or higher](https://docs.docker.com/compose/overview/)
+- [Docker-Compose v1.8 or higher](https://docs.docker.com/compose/overview/)){: #new_window} 
 
 ### Register a user
 
