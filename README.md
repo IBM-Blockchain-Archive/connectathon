@@ -57,7 +57,7 @@ cd ./connectathon/marbles
   marbles Node.js application.  This process takes a few minutes, during which you will see the various
   images being downloaded and extracted onto your local machine.  Depending on the
   configuration of your machine, you may be prompted several times for your root password. The `enrollID` and `enrollSecret`
-  which you received in your email upon registration will be used as input
+  which you received in your email upon registration are to be used as input
   parameters in the script below:
   ```bash
   #enrollId is what you used alongside your email when you registered with the COP Server
@@ -74,6 +74,11 @@ cd ./connectathon/marbles
   following:
   ```
   ./marbles.sh up Admin1 xYzAAbbc1234 JPM eric kenny stan
+  ```
+  To reiterate, you will likely be prompted for your machine's root password at least one time after you execute the marbles script.  Supply the root password for your machine and the script will continue to run.  You will see something similar to the following:
+  ```bash
+  Status: Downloaded newer image for connectathon/fabric-ccenv:latest
+Password:
   ```
   If the command executed successfully, skip to the next section.
   
