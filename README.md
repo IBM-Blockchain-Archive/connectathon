@@ -35,6 +35,9 @@ application to authenticate to the chain.
 ### Clone the repo
 ```bash
 git clone https://github.com/IBM-Blockchain/connectathon.git
+```
+#### Navigate to the marbles directory
+```bash
 cd ./connectathon/marbles
 ```
 
