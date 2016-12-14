@@ -23,7 +23,7 @@ docker-compose version
 are solely for accessing the Registration Website. You will NOT reuse them in the forthcoming steps._
 - Next, you will be prompted for an `enrollID` and your `email`.
 - Please enter a unique `enrollID` and the email address where you want your `enrollSecret` sent.  Your `enrollID` can be alphanumeric, but __CANNOT__ contain special characters.  For example, `IBM123` is acceptable, whereas `IBM456$$` is not. 
-- The credentials, which are comprised of your `enrollID` and an auto-generated
+- These administrative credentials, which are comprised of your `enrollID` and an auto-generated
 `enrollSecret`, will be sent by __IBM Blockchain__ to your provided `email`. Save these credentials; you will need the `enrollID` and `enrollSecret` to properly authenticate your marbles application onto the network.  
 
 #### What occurred during registration?
@@ -79,7 +79,7 @@ __IMPORTANT: Please read this entire section before executing the marbles shell 
   ```
   ./marbles.sh up Admin1 xYzAAbbc1234 JPM eric kenny stan
   ```
-  To reiterate, you will likely be prompted for your machine's root password at least one time after you execute the marbles script.  Supply the root password for your machine and the script will continue to run.  You will see something similar to the following:
+  To reiterate, you will likely be prompted for your machine's root password at least one time after you execute the marbles script.  Simply supply the root password for your machine and the script will continue to run.  You will see something similar to the following:
   ```bash
   Status: Downloaded newer image for connectathon/fabric-ccenv:latest
 Password:
