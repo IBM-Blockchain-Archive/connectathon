@@ -36,7 +36,7 @@ application to authenticate to the chain.
 ```bash
 git clone https://github.com/IBM-Blockchain/connectathon.git
 ```
-#### Navigate to the marbles directory
+### Navigate to the marbles directory
 ```bash
 cd ./connectathon/marbles
 ```
@@ -44,7 +44,7 @@ cd ./connectathon/marbles
 ### Use the credentials to join the chain
 __IMPORTANT: Please read this entire section before executing the marbles shell script__
 
-- First, ensure that you are in the correct working directory:
+  First, ensure that you are in the correct working directory:
   ```
   ls
   ```
