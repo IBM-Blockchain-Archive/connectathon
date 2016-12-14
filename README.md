@@ -32,11 +32,10 @@ Behind the scenes a REST call was issued to the publicly-hosted COP server to re
 application to authenticate to the chain.
 
 
-### Clone the repo
+### Clone the repo and navigate to the marbles directory
 ```bash
 git clone https://github.com/IBM-Blockchain/connectathon.git
 ```
-### Navigate to the marbles directory
 ```bash
 cd ./connectathon/marbles
 ```
