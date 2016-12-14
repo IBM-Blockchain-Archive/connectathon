@@ -3,7 +3,7 @@
 ## Follow these steps and quickly join a Marbles Trading Network
 
 ### Prerequisites
-_Note: It is highly recommended to open any hyperlinks in a new browser tab; if not you will be navigated away from this page_
+_Note: It is highly recommended to open any hyperlinks in a new browser tab; if not, you will be navigated away from this page_
 - <a href="https://git-scm.com/downloads" target="_blank">Git client</a>
 - <a href="https://www.docker.com/products/overview" target="_blank">Docker v1.12 or higher</a>
 - [Docker-Compose v1.8 or higher](https://docs.docker.com/compose/overview/)
@@ -18,15 +18,13 @@ docker-compose version
 
 ### Register a user
 
-- Go to [User Registration Website](http://connectathon-cop.blockchain.ibm.com)
+- Go to the [User Registration Website](http://connectathon-cop.blockchain.ibm.com)
 - To circumvent the firewall, use the credentials that you received from __IBM Blockchain__.  _Note: These credentials
-are solely for accessing the Registration Website. Do not reuse them in the next step._
+are solely for accessing the Registration Website. You will NOT reuse them in the forthcoming steps._
 - Next, you will be prompted for an `enrollID` and your `email`.
-- Please enter a unique `enrollID`.
+- Please enter a unique `enrollID` and the email address where you want your `enrollSecret` sent.  Your `enrollID` can be alphanumeric, but __CANNOT__ contain special characters.  For example, `IBM123` is acceptable, whereas `IBM456$$` is not. 
 - The credentials, which are comprised of your `enrollID` and an auto-generated
-`enrollSecret`, will be sent to you via your provided `email`.  The sender of this
-email will be __IBM Blockchain__.  Save these credentials; you will need the `enrollID` 
-and `enrollSecret` to properly authenticate your marbles application onto the network.  
+`enrollSecret`, will be sent by __IBM Blockchain__ to your provided `email`. Save these credentials; you will need the `enrollID` and `enrollSecret` to properly authenticate your marbles application onto the network.  
 
 #### What occurred during registration?
   
