@@ -53,7 +53,7 @@ __IMPORTANT: Please read this entire section before executing the marbles shell 
   docker-compose-no-cdb.yml       mycreds.json
   marbles.sh                      peer.yml
   ```
-  Now, execute the `marbles.sh` shell script as demonstrated in the code block below. This script will pull
+  The syntax for the `marbles.sh` shell script is presented in the code block below. This script will pull
   the dependent fabric images from [Docker Hub](https://hub.docker.com/u/connectathon/)
   and spin up two containers - one for your endorsing peer, and one for the
   marbles Node.js application.  This process takes a few minutes, during which you will see the various
@@ -86,7 +86,7 @@ __IMPORTANT: Please read this entire section before executing the marbles shell 
   Status: Downloaded newer image for connectathon/fabric-ccenv:latest
 Password:
   ```
-  Once the dowloads have completed, move on to the next section.
+  Now, run the `marbles.sh` script in accordance with the instructions.  Once the images have finished downloading and extracting, move on to the next section.
 
 ### View the Marbles UI
   By executing the shell script you have kicked off the Marbles application.  It
