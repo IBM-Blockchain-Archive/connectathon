@@ -3,6 +3,7 @@
 ## Follow these steps and quickly join a Marbles Trading Network
 
 ### Prerequisites
+_Note: It is highly recommended to open any hyperlinks in a new browser tab; if not you will be navigated away from this page_
 - <a href="https://git-scm.com/downloads" target="_blank">Git client</a>
 - <a href="https://www.docker.com/products/overview" target="_blank">Docker v1.12 or higher</a>
 - [Docker-Compose v1.8 or higher](https://docs.docker.com/compose/overview/)
@@ -40,6 +41,7 @@ cd ./connectathon/marbles
 ```
 
 ### Use the credentials to join the chain
+__IMPORTANT: Please read this entire section before executing the marbles shell script__
 
 - First, ensure that you are in the correct working directory:
   ```
@@ -67,8 +69,12 @@ cd ./connectathon/marbles
   
   ./marbles.sh up <enrollID> <enrollSecret> <company> <user1> <user2> <user3>
   ```
-  Ensure that you populate all of the required fields.  Recall that this demo is
-  simulating an organizational admin who authenticates to a blockchain network,
+  Ensure that you populate all of the required fields and that you identically match the `enrollID` 
+  and `enrollSecret`. If for some reason you supply an incorrect `enrollSecret`, you will need to 
+  re-register and request fresh credentials.  __These inputs ARE case-sensitive.  Additionally, be sure to only user 
+  alphanumeric strings for your `enrollID`, `company`, and `users`.__
+  
+  Recall that this demo is simulating an organizational admin who authenticates to a blockchain network,
   and then permissions users to transact on the network via their organization's
   endorsing peer.  A sample command line prompt might look similar to the
   following:
@@ -80,14 +86,7 @@ cd ./connectathon/marbles
   Status: Downloaded newer image for connectathon/fabric-ccenv:latest
 Password:
   ```
-  If the command executed successfully, skip to the next section.
-  
-  If your command fails to run, then you need to turn the marbles shell script into an
-  executable.  From the `./connectathon/marbles` directory:
-  ```bash
-  chmod a+x marbles.sh 
-  ```
-  Now re-run the marbles shell script with the same inputs as before.
+  Once the dowloads have completed, move on to the next section.
 
 ### View the Marbles UI
   By executing the shell script you have kicked off the Marbles application.  It
@@ -116,6 +115,11 @@ Password:
   organizations will appear on the screen.  You will also notice that you have
   the ability to transfer assets (marbles) for your registered users, but
   cannot distribute another organization's assets.  __Happy trading!__
+  
+  If you want to see the full transaction lifecycle for an invocation, click the __Settings__ 
+  button in the upper left portion of your screen.  Then click the __Enable__ button next to __Story Mode__.
+  Now, when you create or trade an asset, you will be able to see the full architectural flow - proposal, endorsement,
+  ordering, and validation/commitment - and an ensuring success/failure for your transaction. 
 
   To see the logs and peer processes for your endorsing peer:
   ```
