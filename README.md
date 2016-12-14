@@ -3,6 +3,7 @@
 ## Follow these steps and quickly join a Marbles Trading Network
 
 ### Prerequisites
+_Note: It is highly recommended to open any hyperlinks in a new browser tab; if not, you will be navigated away from this page_
 - <a href="https://git-scm.com/downloads" target="_blank">Git client</a>
 - <a href="https://www.docker.com/products/overview" target="_blank">Docker v1.12 or higher</a>
 - [Docker-Compose v1.8 or higher](https://docs.docker.com/compose/overview/)
@@ -17,15 +18,13 @@ docker-compose version
 
 ### Register a user
 
-- Go to [User Registration Website](http://connectathon-cop.blockchain.ibm.com)
+- Go to the [User Registration Website](http://connectathon-cop.blockchain.ibm.com)
 - To circumvent the firewall, use the credentials that you received from __IBM Blockchain__.  _Note: These credentials
-are solely for accessing the Registration Website. Do not reuse them in the next step._
+are solely for accessing the Registration Website. You will NOT reuse them in the forthcoming steps._
 - Next, you will be prompted for an `enrollID` and your `email`.
-- Please enter a unique `enrollID`.
-- The credentials, which are comprised of your `enrollID` and an auto-generated
-`enrollSecret`, will be sent to you via your provided `email`.  The sender of this
-email will be __IBM Blockchain__.  Save these credentials; you will need the `enrollID` 
-and `enrollSecret` to properly authenticate your marbles application onto the network.  
+- Please enter a unique `enrollID` and the email address where you want your `enrollSecret` sent.  Your `enrollID` can be alphanumeric, but __CANNOT__ contain special characters.  For example, `IBM123` is acceptable, whereas `IBM456$$` is not. 
+- These administrative credentials, which are comprised of your `enrollID` and an auto-generated
+`enrollSecret`, will be sent by __IBM Blockchain__ to your provided `email`. Save these credentials; you will need the `enrollID` and `enrollSecret` to properly authenticate your marbles application onto the network.  
 
 #### What occurred during registration?
   
@@ -33,15 +32,18 @@ Behind the scenes a REST call was issued to the publicly-hosted COP server to re
 application to authenticate to the chain.
 
 
-### Clone the repo
+### Clone the repo and navigate to the marbles directory
 ```bash
 git clone https://github.com/IBM-Blockchain/connectathon.git
+```
+```bash
 cd ./connectathon/marbles
 ```
 
 ### Use the credentials to join the chain
+__IMPORTANT: Please read this entire section before executing the marbles shell script__
 
-- First, ensure that you are in the correct working directory:
+  First, ensure that you are in the correct working directory:
   ```
   ls
   ```
@@ -57,7 +59,7 @@ cd ./connectathon/marbles
   marbles Node.js application.  This process takes a few minutes, during which you will see the various
   images being downloaded and extracted onto your local machine.  Depending on the
   configuration of your machine, you may be prompted several times for your root password. The `enrollID` and `enrollSecret`
-  which you received in your email upon registration will be used as input
+  which you received in your email upon registration are to be used as input
   parameters in the script below:
   ```bash
   #enrollId is what you used alongside your email when you registered with the COP Server
@@ -67,22 +69,24 @@ cd ./connectathon/marbles
   
   ./marbles.sh up <enrollID> <enrollSecret> <company> <user1> <user2> <user3>
   ```
-  Ensure that you populate all of the required fields.  Recall that this demo is
-  simulating an organizational admin who authenticates to a blockchain network,
+  Ensure that you populate all of the required fields and that you identically match the `enrollID` 
+  and `enrollSecret`. If for some reason you supply an incorrect `enrollSecret`, you will need to 
+  re-register and request fresh credentials.  __These inputs ARE case-sensitive.  Additionally, be sure to only user 
+  alphanumeric strings for your `enrollID`, `company`, and `users`.__
+  
+  Recall that this demo is simulating an organizational admin who authenticates to a blockchain network,
   and then permissions users to transact on the network via their organization's
   endorsing peer.  A sample command line prompt might look similar to the
   following:
   ```
   ./marbles.sh up Admin1 xYzAAbbc1234 JPM eric kenny stan
   ```
-  If the command executed successfully, skip to the next section.
-  
-  If your command fails to run, then you need to turn the marbles shell script into an
-  executable.  From the `./connectathon/marbles` directory:
+  To reiterate, you will likely be prompted for your machine's root password at least one time after you execute the marbles script.  Simply supply the root password for your machine and the script will continue to run.  You will see something similar to the following:
   ```bash
-  chmod a+x marbles.sh 
+  Status: Downloaded newer image for connectathon/fabric-ccenv:latest
+Password:
   ```
-  Now re-run the marbles shell script with the same inputs as before.
+  Once the dowloads have completed, move on to the next section.
 
 ### View the Marbles UI
   By executing the shell script you have kicked off the Marbles application.  It
@@ -111,6 +115,11 @@ cd ./connectathon/marbles
   organizations will appear on the screen.  You will also notice that you have
   the ability to transfer assets (marbles) for your registered users, but
   cannot distribute another organization's assets.  __Happy trading!__
+  
+  If you want to see the full transaction lifecycle for an invocation, click the __Settings__ 
+  button in the upper left portion of your screen.  Then click the __Enable__ button next to __Story Mode__.
+  Now, when you create or trade an asset, you will be able to see the full architectural flow - proposal, endorsement,
+  ordering, and validation/commitment - and an ensuring success/failure for your transaction. 
 
   To see the logs and peer processes for your endorsing peer:
   ```
