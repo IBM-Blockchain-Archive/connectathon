@@ -71,7 +71,7 @@ __IMPORTANT: Please read this entire section before executing the marbles shell 
   ```
   Ensure that you populate all of the required fields and that you identically match the `enrollID` 
   and `enrollSecret`. If for some reason you supply an incorrect `enrollSecret`, you will need to 
-  re-register and request fresh credentials.  __These inputs ARE case-sensitive.  Additionally, be sure to only user 
+  re-register and request fresh credentials.  __These inputs ARE case-sensitive.  Additionally, be sure to only use 
   alphanumeric strings for your `enrollID`, `company`, and `users`.__
   
   Recall that this demo is simulating an organizational admin who authenticates to a blockchain network,
@@ -119,7 +119,7 @@ Password:
   If you want to see the full transaction lifecycle for an invocation, click the __Settings__ 
   button in the upper left portion of your screen.  Then click the __Enable__ button next to __Story Mode__.
   Now, when you create or trade an asset, you will be able to see the full architectural flow - proposal, endorsement,
-  ordering, and validation/commitment - and an ensuring success/failure for your transaction. 
+  ordering, and validation/commitment - and an ensuing success/failure for your transaction. 
 
   To see the logs and peer processes for your endorsing peer:
   ```
